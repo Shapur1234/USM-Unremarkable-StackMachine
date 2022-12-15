@@ -1,0 +1,13 @@
+Stack, operation register, line register
+
+; - Comment
+[ - Push, ] - Pop, @ - Cpy(n), $ - Number of items on stack
++ - Add, - - Sub, * - Mul, / - Div, % - Mod, >>, << - Bitwise shifts, Bitwise logical operations
+< - Push line registor, > - Pop line registor
+! - Stdout, ? - Stdin
+
+Subrutine
+
+IF CONDITION
+fsdfsdfsd
+ENDIF
