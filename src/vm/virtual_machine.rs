@@ -3,6 +3,8 @@ use std::{
     fmt::{self, Display},
 };
 
+use colored::Colorize;
+
 use super::Oper;
 
 #[derive(Clone, Debug)]
@@ -29,13 +31,12 @@ impl Display for VirtualMachine {
         for (i, instruction) in self.instructions.iter().enumerate() {
             writeln!(f, "{:}\t{:}", i, instruction)?;
         }
-        write!(f, "=================================")?;
         Ok(())
     }
 }
 
 impl VirtualMachine {
-    pub fn new(instructions: String) -> Result<Self, String> {
+    pub fn try_new(instructions: String) -> Result<Self, String> {
         Ok(Self {
             stack: VecDeque::new(),
             program_counter: 0,
@@ -47,7 +48,7 @@ impl VirtualMachine {
     pub fn step(&mut self) {
         if (self.program_counter as usize) < self.instructions.len() {
             if let Err(err) = self.exec_instruction() {
-                println!("Error: {err:?}");
+                println!("{}", format!("Error: {err:?}").red());
                 self.endstate = true;
             }
         } else {
@@ -65,7 +66,7 @@ impl VirtualMachine {
             Oper::Number(num) => self.stack.push_back(num),
             Oper::Pop => {
                 if let Some(popped) = self.stack.pop_back() {
-                    println!("{:?}", popped);
+                    println!("{}", format!("Output: {popped:?}").green().bold());
                 } else {
                     Err(ExecError::StackPopError)?;
                 }

@@ -13,7 +13,6 @@ pub enum Oper {
     Mod,
     PushProgramCounter,
     PopProgramCounter,
-    // StdOut,
     StdIn,
 }
 
@@ -54,7 +53,6 @@ impl TryFrom<String> for Oper {
                 "%" => Ok(Oper::Mod),
                 "<" => Ok(Oper::PushProgramCounter),
                 ">" => Ok(Oper::PopProgramCounter),
-                // "!" => Ok(Oper::StdOut),
                 "?" => Ok(Oper::StdIn),
                 _ => Err(format!("String '{val:}' cannot be parsed as an operation.")),
             }
