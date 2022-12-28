@@ -3,7 +3,7 @@
 * This repo includes an interpreter for it written in rust
 
 ## Language design
-* Sourcecode is a text file ending with .usd
+* Sourcecode is a text file ending with .usm
 * Sourcecode is interpreted into a series of instructions by the interpreter
 * The programm counter (a signed integer) stores which instruction will be executed next 
 * When the programm registers value exceeds number of instruction, the programm will terminate
@@ -33,7 +33,8 @@
 * \* - Multiplies the 2 numbers
 * ! - Prints the result, popping it from the stack 
 
-See [example_programms](https://github.com/Shapur1234/USM-Unremarkable-StackMachine/tree/master/example_programms) for more examples
+See [example_programms](https://github.com/Shapur1234/
+-Unremarkable-StackMachine/tree/master/example_programms) for more examples
 
 ## Compiling the interpreter
 * Install [rust](https://www.rust-lang.org/)
