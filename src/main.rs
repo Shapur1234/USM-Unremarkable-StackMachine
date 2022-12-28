@@ -22,7 +22,7 @@ struct Cli {
     #[arg(
         short,
         long,
-        help = "Enable debug mode. Machine state will be printed after each instruction. Press [Enter] to advance machine state",
+        help = "Enable debug mode. Machine state will be printed after each step. Press [Enter] to advance machine state",
         value_name = "DEBUG_MODE",
         action = clap::ArgAction::SetTrue,
     )]
