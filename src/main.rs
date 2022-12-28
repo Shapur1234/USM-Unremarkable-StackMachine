@@ -60,7 +60,9 @@ fn main() {
             println!("{vm:}");
 
             let mut input = String::new();
-            io::stdin().read_line(&mut input).unwrap();
+            io::stdin()
+                .read_line(&mut input)
+                .expect(&format!("Failed to read from stdin").red());
 
             print!("{esc}[2J{esc}[1;1H", esc = 27 as char); // Clear terminal
         }
