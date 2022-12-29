@@ -19,20 +19,15 @@ pub enum Oper {
 
 impl Oper {
     // Parse isntructions from String
-    pub fn try_new(val: String) -> Result<Vec<Oper>, String> {
+    pub fn try_new(s: String) -> Result<Vec<Oper>, String> {
         let mut out = vec![];
-
-        for c in val
-            .split_whitespace()
-            .into_iter()
-            .collect::<String>()
-            .chars()
-        {
-            if !c.is_whitespace() {
-                out.push(Oper::try_from(c.to_string())?)
+        for x in s.trim().split_whitespace() {
+            println!("{x:?}");
+            match Oper::try_from(x.to_string()) {
+                Ok(oper) => out.push(oper),
+                Err(e) => Err(e)?,
             }
         }
-
         Ok(out)
     }
 }
@@ -43,6 +38,12 @@ impl TryFrom<String> for Oper {
     fn try_from(val: String) -> Result<Self, Self::Error> {
         if is_string_numeric(&val) {
             Ok(Oper::Number(val.parse().unwrap()))
+        } else if val.len() > 1 && val.chars().nth(0).unwrap() == '-' {
+            Ok(Oper::Number(-{
+                let mut val_iter = val.chars();
+                val_iter.next();
+                val_iter.collect::<String>().parse().unwrap()
+            }))
         } else {
             match val.as_str() {
                 "!" => Ok(Oper::Pop),
