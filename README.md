@@ -22,8 +22,8 @@
 | MUL         | *      | Pops two topmost values from stack, pushes result of multiplying them onto the stack |
 | DIV         | /      | Pops two topmost values from stack, pushes result of dividing them onto the stack |
 | MOD         | %      | Pops two topmost values from stack, pushes result of moduling them onto the stack |
-| PUSH_PROGRAMM_COUNTER | <      | Pushes the programm register onto the stack |
-| POP_PROGRAMM_COUNTER  | >      | Pops the topmost value from stack and makes it the new programm counter. Can be used as goto |
+| PUSH_PROG_COUNTER | <      | Pushes the programm register onto the stack |
+| POP_PROG_COUNTER  | >      | Pops the topmost value from stack and makes it the new programm counter. Can be used as goto |
 | STD_IN      | ?      | Read a value from StdIn, pushes the result onto the stack |
 
 ### Example programm
