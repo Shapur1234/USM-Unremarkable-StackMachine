@@ -11,7 +11,7 @@ use super::Oper;
 // Enum storing possible runtime errors
 #[derive(Clone, Debug)]
 enum ExecError {
-    StackPopError,
+    StackUnderflow,
     DivisionByZeroError,
     StackOverflow,
     STDInError,
@@ -74,7 +74,7 @@ impl VirtualMachine {
                 if let Some(popped) = self.stack.pop_back() {
                     println!("{}", format!("Output: {popped:?}").green().bold());
                 } else {
-                    Err(ExecError::StackPopError)?;
+                    Err(ExecError::StackUnderflow)?;
                 }
             }
             Oper::Cpy => {
@@ -88,7 +88,7 @@ impl VirtualMachine {
                         }
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::StackCount => {
                 if let Ok(count_isize) = self.stack.len().try_into() {
@@ -104,7 +104,7 @@ impl VirtualMachine {
                         return Ok(());
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::Sub => {
                 if let Some(num1) = self.stack.pop_back() {
@@ -113,7 +113,7 @@ impl VirtualMachine {
                         return Ok(());
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::Mul => {
                 if let Some(num1) = self.stack.pop_back() {
@@ -122,7 +122,7 @@ impl VirtualMachine {
                         return Ok(());
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::Div => {
                 if let Some(num1) = self.stack.pop_back() {
@@ -135,7 +135,7 @@ impl VirtualMachine {
                         }
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::Mod => {
                 if let Some(num1) = self.stack.pop_back() {
@@ -148,14 +148,14 @@ impl VirtualMachine {
                         }
                     }
                 }
-                Err(ExecError::StackPopError)?;
+                Err(ExecError::StackUnderflow)?;
             }
             Oper::PushProgramCounter => self.stack.push_back(self.program_counter),
             Oper::PopProgramCounter => {
                 if let Some(popped) = self.stack.pop_back() {
                     self.program_counter = popped
                 } else {
-                    Err(ExecError::StackPopError)?;
+                    Err(ExecError::StackUnderflow)?;
                 }
             }
             Oper::StdIn => self.stack.push_back({
