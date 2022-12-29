@@ -15,7 +15,7 @@
 |-------------|--------|---------|
 | NUM 3144    | 3144   | Pushes a value (any positive integer) onto the stack (Can be any number, doesn't have to be 3144) |
 | POP         | !      | Pops the topmost value from stack and prints it to StdOut |
-| CPY         | @      | Pops two topmost values from stack, copies the 2nd popped value that many times onto the stack |
+| CPY         | @      | Pops two topmost values from stack, copies the 2nd popped value times the 1st popped value onto the stack |
 | STACK_COUNT | $      | Puhses onto the stack the length of the stack |
 | ADD         | +      | Pops two topmost values from stack, pushes result of adding them onto the stack |
 | SUB         | -      | Pops two topmost values from stack, pushes result of subtracting them onto the stack |
