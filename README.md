@@ -33,15 +33,14 @@
 * \* - Multiplies the 2 numbers
 * ! - Prints the result, popping it from the stack 
 
-See [example_programms](https://github.com/Shapur1234/
--Unremarkable-StackMachine/tree/master/example_programms) for more examples
+See [example_programms](/example_programms) for more examples
 
 ## Compiling the interpreter
 * Install [rust](https://www.rust-lang.org/)
 * Run `cargo r` to build and run the project
 
 ## Using the interpreter
-* Precompiled binaries for (Arch) Linux and Windows can be found in [bin](https://github.com/Shapur1234/USM-Unremarkable-StackMachine/tree/master/bin)
+* Precompiled binaries for (Arch) Linux and Windows can be found in [bin](/bin)
 * Run `usm -h` for help
 * Run `usm -f filepath` to interpret a file
 * Run `usm -f filepath -d` to run in debug mode - intepret the code step by step
