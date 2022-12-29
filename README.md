@@ -40,7 +40,7 @@ See [example_programms](/example_programms) for more examples
 * Run `cargo r` to build and run the project
 
 ## Using the interpreter
-* Precompiled binaries for (Arch) Linux and Windows can be found in [bin](/bin)
+* Precompiled binaries can be found under [releases](https://github.com/Shapur1234/USM-Unremarkable-StackMachine/releases)
 * Run `usm -h` for help
 * Run `usm -f filepath` to interpret a file
 * Run `usm -f filepath -d` to run in debug mode - intepret the code step by step
