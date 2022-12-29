@@ -8,6 +8,7 @@ use colored::Colorize;
 
 use super::Oper;
 
+// Enum storing possible runtime errors
 #[derive(Clone, Debug)]
 enum ExecError {
     StackPopError,
@@ -16,6 +17,7 @@ enum ExecError {
     STDInError,
 }
 
+// Struct storing language runtime state
 #[derive(Clone, Debug)]
 pub struct VirtualMachine {
     stack: VecDeque<isize>,
@@ -38,6 +40,7 @@ impl Display for VirtualMachine {
 }
 
 impl VirtualMachine {
+    // Initialization of the vm
     pub fn try_new(instructions: String) -> Result<Self, String> {
         Ok(Self {
             stack: VecDeque::new(),
@@ -47,6 +50,7 @@ impl VirtualMachine {
         })
     }
 
+    // Run an execution cycle
     pub fn step(&mut self) {
         if (self.program_counter as usize) < self.instructions.len() {
             if let Err(err) = self.exec_instruction() {

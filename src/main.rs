@@ -7,6 +7,7 @@ use colored::Colorize;
 
 use crate::vm::VirtualMachine;
 
+// Manage CLI arguments
 #[derive(Debug, Parser)]
 #[command(name = "Unremarkable StackMachine")]
 #[command(about = "Interpreter for USM", long_about = None)]
@@ -45,6 +46,7 @@ fn main() {
 
     println!("Programm to interpret: {contents}");
 
+    // Create a new language runtime
     let mut vm = match VirtualMachine::try_new(contents) {
         Ok(vm) => vm,
         Err(e) => {

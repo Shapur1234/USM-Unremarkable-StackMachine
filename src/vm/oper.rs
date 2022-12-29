@@ -1,5 +1,6 @@
 use std::fmt::{self, Display};
 
+// Enum storing all possible instructions
 #[derive(Clone, Copy, Debug)]
 pub enum Oper {
     Number(isize),
@@ -17,6 +18,7 @@ pub enum Oper {
 }
 
 impl Oper {
+    // Parse isntructions from String
     pub fn try_new(val: String) -> Result<Vec<Oper>, String> {
         let mut out = vec![];
 
