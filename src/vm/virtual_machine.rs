@@ -159,15 +159,13 @@ impl VirtualMachine {
                 }
             }
             Oper::StdIn => self.stack.push_back({
-                print!("{}", format!("Enter input: ").bold());
-                io::stdout()
-                    .flush()
-                    .expect(&format!("Failed to flush StdOut").red());
+                print!("{}", "Enter input: ".bold());
+                io::stdout().flush().expect(&"Failed to flush StdOut".red());
 
                 let mut input_text = String::new();
                 io::stdin()
                     .read_line(&mut input_text)
-                    .expect(&format!("failed to read from StdIn").red());
+                    .expect(&"failed to read from StdIn".red());
 
                 match input_text.trim().parse::<isize>() {
                     Ok(i) => i,

@@ -21,7 +21,7 @@ impl Oper {
     // Parse isntructions from String
     pub fn try_new(s: String) -> Result<Vec<Oper>, String> {
         let mut out = vec![];
-        for x in s.trim().split_whitespace() {
+        for x in s.split_whitespace() {
             match Oper::try_from(x.to_string()) {
                 Ok(oper) => out.push(oper),
                 Err(e) => Err(e)?,
@@ -37,7 +37,7 @@ impl TryFrom<String> for Oper {
     fn try_from(val: String) -> Result<Self, Self::Error> {
         if is_string_numeric(&val) {
             Ok(Oper::Number(val.parse().unwrap()))
-        } else if val.len() > 1 && val.chars().nth(0).unwrap() == '-' {
+        } else if val.len() > 1 && val.starts_with('-') {
             Ok(Oper::Number(-{
                 let mut val_iter = val.chars();
                 val_iter.next();
