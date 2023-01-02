@@ -37,13 +37,6 @@ impl TryFrom<String> for Oper {
     fn try_from(val: String) -> Result<Self, Self::Error> {
         if let Ok(val_isize) = val.parse() {
             Ok(Oper::Number(val_isize))
-        } else if val.len() > 1 && val.starts_with('-') {
-            let mut val_iter = val.chars();
-            val_iter.next();
-            match val_iter.collect::<String>().parse::<isize>() {
-                Ok(oper) => Ok(Oper::Number(-oper)),
-                Err(_) => Err(format!("String '{val:}' cannot be parsed as an operation.")),
-            }
         } else {
             match val.as_str() {
                 "!" => Ok(Oper::Pop),
@@ -80,13 +73,4 @@ impl Display for Oper {
             Oper::StdIn => write!(f, "STD_IN"),
         }
     }
-}
-
-fn is_string_numeric(val: &str) -> bool {
-    for character in val.chars() {
-        if !character.is_numeric() {
-            return false;
-        }
-    }
-    true
 }
