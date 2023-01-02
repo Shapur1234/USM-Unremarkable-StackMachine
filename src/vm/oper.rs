@@ -38,11 +38,12 @@ impl TryFrom<String> for Oper {
         if is_string_numeric(&val) {
             Ok(Oper::Number(val.parse().unwrap()))
         } else if val.len() > 1 && val.starts_with('-') {
-            Ok(Oper::Number(-{
-                let mut val_iter = val.chars();
-                val_iter.next();
-                val_iter.collect::<String>().parse().unwrap()
-            }))
+            let mut val_iter = val.chars();
+            val_iter.next();
+            match val_iter.collect::<String>().parse::<isize>() {
+                Ok(oper) => Ok(Oper::Number(-oper)),
+                Err(_) => Err(format!("String '{val:}' cannot be parsed as an operation.")),
+            }
         } else {
             match val.as_str() {
                 "!" => Ok(Oper::Pop),
