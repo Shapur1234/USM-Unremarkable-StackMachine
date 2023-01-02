@@ -35,8 +35,8 @@ impl TryFrom<String> for Oper {
     type Error = String;
 
     fn try_from(val: String) -> Result<Self, Self::Error> {
-        if is_string_numeric(&val) {
-            Ok(Oper::Number(val.parse().unwrap()))
+        if let Ok(val_isize) = val.parse() {
+            Ok(Oper::Number(val_isize))
         } else if val.len() > 1 && val.starts_with('-') {
             let mut val_iter = val.chars();
             val_iter.next();
