@@ -167,9 +167,10 @@ impl VirtualMachine {
                     .read_line(&mut input_text)
                     .expect(&"failed to read from StdIn".red());
 
-                match input_text.trim().parse::<isize>() {
-                    Ok(i) => i,
-                    Err(_) => Err(ExecError::STDInError)?,
+                if let Ok(i) = input_text.trim().parse::<isize>() {
+                    i
+                } else {
+                    Err(ExecError::STDInError)?
                 }
             }),
         }
