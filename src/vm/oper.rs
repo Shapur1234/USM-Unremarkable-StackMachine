@@ -22,7 +22,6 @@ impl Oper {
     pub fn try_new(s: String) -> Result<Vec<Oper>, String> {
         let mut out = vec![];
         for x in s.trim().split_whitespace() {
-            println!("{x:?}");
             match Oper::try_from(x.to_string()) {
                 Ok(oper) => out.push(oper),
                 Err(e) => Err(e)?,
