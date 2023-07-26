@@ -1,0 +1,1 @@
+/home/jirka/Programming/USM-Unremarkable-StackMachine/target/release/usm: /home/jirka/Programming/USM-Unremarkable-StackMachine/src/main.rs /home/jirka/Programming/USM-Unremarkable-StackMachine/src/vm/mod.rs /home/jirka/Programming/USM-Unremarkable-StackMachine/src/vm/oper.rs /home/jirka/Programming/USM-Unremarkable-StackMachine/src/vm/virtual_machine.rs

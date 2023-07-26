@@ -1,0 +1,12 @@
+/home/jirka/Programming/USM-Unremarkable-StackMachine/target/release/deps/anstyle-c4d8a30846bf20db.rmeta: /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/lib.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/macros.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/color.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/effect.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/reset.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/style.rs
+
+/home/jirka/Programming/USM-Unremarkable-StackMachine/target/release/deps/libanstyle-c4d8a30846bf20db.rlib: /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/lib.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/macros.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/color.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/effect.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/reset.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/style.rs
+
+/home/jirka/Programming/USM-Unremarkable-StackMachine/target/release/deps/anstyle-c4d8a30846bf20db.d: /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/lib.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/macros.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/color.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/effect.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/reset.rs /home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/style.rs
+
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/lib.rs:
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/macros.rs:
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/color.rs:
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/effect.rs:
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/reset.rs:
+/home/jirka/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-1.0.1/src/style.rs:
